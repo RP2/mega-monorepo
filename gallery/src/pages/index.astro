@@ -76,8 +76,13 @@ galleryItems.forEach((item, index) => {
   // animate cards from right to left with staggered delays
   cards.forEach((card) => {
     inView(card, () => {
-      card.classList.remove("invisible"); // remove invisible class to start animation
+      // check if device is mobile (below tailwind's sm breakpoint)
+      if (window.innerWidth < 640) {
+        card.classList.remove("invisible"); // just show the card, no animation
+        return;
+      }
       // animate card opacity and y position with staggered delays
+      card.classList.remove("invisible");
       animate(
         card,
         { opacity: [0, 1], y: [35, 0] },
