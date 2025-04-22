@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@import "@fontsource/lora/400.css";
+@import "@fontsource/lora/400-italic.css";
+@import "@fontsource/lora/600.css";
+@import "@fontsource/roboto/400.css";
+@import "@fontsource/roboto/900.css";
+
+@theme {
+  --font-sans: "Roboto", "sans";
+  --font-serif: "Lora", "serif";
+  --aspect-retro: 4 / 3;
+}

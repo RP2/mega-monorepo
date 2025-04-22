@@ -1,0 +1,163 @@
+---
+import Layout from "../layouts/Layout.astro";
+import type { ImageMetadata } from "astro";
+import Card from "../components/Card.astro";
+import Filter from "../components/Filter.astro";
+import Footer from "../components/Footer.astro";
+import Loading from "../components/Loading.astro";
+import metadata from "../data/metadata.json";
+
+// import all images
+const imageModules = import.meta.glob<{ default: ImageMetadata }>(
+  "../data/images/**/*.{jpeg,jpg,png,gif,webP}",
+  { eager: true },
+);
+
+// create gallery items with metadata
+const galleryItems = Object.entries(imageModules).map(([path, module]) => {
+  const filename = path.split("/").pop() || "";
+  const itemMetadata = metadata.find((item) => item.filename === filename) || {
+    title: filename.split(".")[0],
+    description: "",
+    tags: [],
+    date: new Date().toISOString().split("T")[0], // default to today if no date
+  };
+
+  return {
+    image: module.default,
+    title: itemMetadata.title,
+    description: itemMetadata.description,
+    tags: itemMetadata.tags,
+    loading: "lazy" as "eager" | "lazy",
+    date: itemMetadata.date,
+  };
+});
+
+// sort gallery items by date (newest first)
+galleryItems.sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+);
+
+// update loading strategy for visible cards
+galleryItems.forEach((item, index) => {
+  item.loading = index < 12 ? "eager" : "lazy";
+});
+---
+
+<Layout
+  title="Riley's Gallery"
+  description="A collection of images in a gallery format"
+>
+  <Loading />
+  <h1
+    id="title"
+    class="mb-6 w-fit cursor-crosshair font-sans text-6xl font-black uppercase sm:text-8xl"
+  >
+    Nothing matters
+  </h1>
+  <Filter />
+  <main
+    class="grid min-h-[75dvh] auto-rows-min grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4"
+  >
+    {
+      galleryItems.map((item, index) => (
+        <Card item={item} index={index} loading={item.loading} />
+      ))
+    }
+  </main>
+  <Footer />
+</Layout>
+
+<script>
+  import { animate, inView, press, hover } from "motion";
+
+  const cards = document.querySelectorAll("card");
+
+  // animate cards from right to left with staggered delays
+  cards.forEach((card) => {
+    inView(card, () => {
+      card.classList.remove("invisible"); // remove invisible class to start animation
+      // animate card opacity and y position with staggered delays
+      animate(
+        card,
+        { opacity: [0, 1], y: [35, 0] },
+        {
+          opacity: { duration: 0.25 },
+          y: {
+            duration: 0.5,
+            type: "spring",
+            damping: 20,
+            stiffness: 500,
+          },
+        },
+      );
+    });
+    // check if card is in view before starting animation
+    press(card, () => {
+      animate(card, { scale: 0.95 }, { type: "spring", stiffness: 500 });
+      // reset card scale to original size on release
+      return () =>
+        animate(
+          card,
+          { scale: 1 },
+          { type: "spring", damping: 10, stiffness: 1000 },
+        );
+    });
+  });
+
+  // hovering title
+  const title = document.querySelector("#title");
+  let originalText = title?.textContent ?? "";
+  let isSplit = false;
+  let isReturning = false;
+
+  // split the title into spans
+  function splitTitle() {
+    if (!title || isSplit) return;
+    isSplit = true;
+    title.innerHTML = "";
+    originalText.split("").forEach((char) => {
+      const span = document.createElement("span");
+      span.textContent = char === " " ? "\u00A0" : char;
+      // use tailwind for inline-block and consistent spacing
+      span.classList.add("title-char", "inline-block");
+      title.appendChild(span);
+    });
+  }
+  // hover effect for title if it exists
+  if (title) {
+    hover(title, () => {
+      // split the title into spans
+      splitTitle();
+      const chars = title.querySelectorAll(".title-char");
+      chars.forEach((span) => {
+        // pick a random angle and distance (off screen)
+        const angle = Math.random() * 2 * Math.PI;
+        // use a large distance to ensure off screen
+        const distance = Math.max(window.innerWidth, window.innerHeight) * 1.2;
+        const x = Math.cos(angle) * distance;
+        const y = Math.sin(angle) * distance;
+        animate(span, { x, y }, { duration: 25 });
+      });
+
+      // on hover end, snap back and unsplit
+      return async () => {
+        if (isReturning) return;
+        isReturning = true;
+        const chars = title.querySelectorAll(".title-char");
+        // animate all chars back and wait for all to finish
+        await Promise.all(
+          Array.from(chars).map((span) =>
+            animate(
+              span,
+              { x: 0, y: 0 },
+              { duration: 0.25, type: "spring", damping: 10, stiffness: 1000 },
+            ),
+          ),
+        );
+        // reset title text
+        isReturning = false;
+      };
+    });
+  }
+</script>

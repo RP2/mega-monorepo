@@ -1,0 +1,41 @@
+---
+// generate breadcrumb paths by splitting URL and removing empty segments
+const paths = Astro.url.pathname.split("/").filter((path) => path !== ""); // remove empty path segments from URL
+const breadcrumbs = paths.map((path, index) => {
+  // create URL for each breadcrumb level by joining path segments up to current index
+  const url = `/${paths.slice(0, index + 1).join("/")}/`;
+  return {
+    name: path,
+    url,
+  };
+});
+---
+
+<nav aria-label="Breadcrumb" class="mb-4">
+  <ol class="flex items-center space-x-2">
+    <li>
+      <a href="/" class="hover:underline">home</a>
+    </li>
+    {
+      breadcrumbs.map((crumb, index) => (
+        <>
+          <li class="text-neutral-400">/</li>
+          <li>
+            {index === breadcrumbs.length - 1 ? (
+              <a href={crumb.url} class="text-neutral-900 underline">
+                {crumb.name}
+              </a>
+            ) : (
+              <a
+                href={crumb.url}
+                class="under text-neutral-500 hover:text-neutral-900"
+              >
+                {crumb.name}
+              </a>
+            )}
+          </li>
+        </>
+      ))
+    }
+  </ol>
+</nav>

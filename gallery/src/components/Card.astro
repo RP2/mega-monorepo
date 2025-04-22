@@ -1,0 +1,79 @@
+---
+import { Image, getImage } from "astro:assets";
+import Modal from "./Modal.astro";
+
+interface Props {
+  item: {
+    image: ImageMetadata;
+    title: string;
+    description: string;
+    tags: Array<string>;
+  };
+  index: number;
+  loading: "eager" | "lazy" | null | undefined;
+}
+
+const { item, loading } = Astro.props;
+
+// generate tiny placeholder during build
+const tinyPlaceholder = await getImage({
+  src: item.image,
+  width: 16,
+  height: 16,
+  format: "webp",
+});
+// generate background image style during build
+const bgStyle = `background-image: url(${tinyPlaceholder.src}); background-size: cover;`;
+---
+
+<card
+  data-tags={item.tags.join(", ")}
+  id={item.title}
+  class="group aspect-retro invisible relative max-h-[500px] cursor-pointer overflow-hidden rounded-sm"
+>
+  <div
+    class="absolute -inset-3 -z-10 scale-105 blur-md"
+    style={bgStyle}
+    aria-hidden="true"
+  >
+  </div>
+  <Image
+    class="relative h-full w-full object-cover opacity-0 transition-opacity duration-75"
+    src={item.image}
+    alt={item.description}
+    widths={[240, 540, 720, item.image.width]}
+    sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${item.image.width}px`}
+    loading={loading}
+    onload="this.classList.remove('opacity-0')"
+  />
+  <div
+    class="absolute inset-0 flex w-full items-end bg-gradient-to-t from-neutral-900/50 via-transparent to-transparent p-4 opacity-0 transition-opacity group-hover:opacity-100"
+  >
+    <h2 class="font-serif text-xl text-neutral-100">
+      {item.title}
+    </h2>
+  </div>
+  <Modal image={item.image} title={item.title} description={item.description} />
+</card>
+
+<script>
+  // add click event listeners to all gallery cards
+  document.querySelectorAll("card").forEach((card) => {
+    card.addEventListener("click", () => {
+      // show the corresponding modal for the clicked gallery card
+      const modal = card.querySelector("dialog");
+      // check if modal is a dialog element
+      if (modal instanceof HTMLDialogElement) {
+        const metadataOverlay = modal.querySelector(".metadata-overlay");
+        // reset metadata overlay opacity and hide it when modal is shown
+        if (metadataOverlay) {
+          metadataOverlay.classList.add("opacity-0");
+        }
+        // show the modal
+        modal.showModal();
+        // prevent scrolling when modal is open
+        document.body.classList.add("overflow-hidden");
+      }
+    });
+  });
+</script>

@@ -1,0 +1,49 @@
+---
+
+---
+
+<div
+  id="loading-screen"
+  class="pointer-events-none fixed inset-0 z-50 flex items-center justify-center bg-white opacity-0"
+>
+  <div class="text-center">
+    <div class="font-serif text-6xl font-black uppercase">loading</div>
+    <div class="mt-4 font-sans text-2xl">
+      <span id="loading-number">0</span>%
+    </div>
+  </div>
+</div>
+
+<script>
+  import { animate } from "motion";
+
+  // check session storage immediately
+  if (!sessionStorage.getItem("visited")) {
+    const loadingScreen = document.getElementById("loading-screen");
+    const loadingNumber = document.getElementById("loading-number");
+
+    if (loadingScreen) {
+      // show loading screen on first visit
+      loadingScreen.classList.remove("opacity-0", "pointer-events-none");
+    }
+
+    if (loadingScreen && loadingNumber) {
+      // animate the number from 0 to 100 over 2 seconds
+      animate(0, 100, {
+        duration: 2,
+        ease: "circOut",
+        onUpdate: (latest) =>
+          (loadingNumber.innerHTML = Math.round(latest).toString()),
+      }).then(() => {
+        // fade out loading screen after animation completes
+        animate(loadingScreen, {
+          opacity: [1, 0],
+        }).then(() => {
+          // remove the loading screen from DOM
+          loadingScreen.remove();
+          sessionStorage.setItem("visited", "true");
+        });
+      });
+    }
+  }
+</script>

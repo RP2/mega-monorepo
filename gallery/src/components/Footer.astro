@@ -1,0 +1,88 @@
+---
+const pathname = new URL(Astro.request.url).pathname;
+const home = "/";
+const about = "/about/";
+const copyright = "/copyright/";
+const privacy = "/privacy/";
+---
+
+<footer class="mt-24 text-xs">
+  <div class="grid grid-cols-2 gap-4 pb-4 sm:grid-cols-5">
+    <h2 class="text-right font-sans text-neutral-500 sm:col-start-4">
+      design, development, & photography
+    </h2>
+    <div class="flex flex-col">
+      <a
+        href="https://rileyperalta.com/"
+        rel="author me"
+        target="_blank"
+        class="w-fit hover:underline">Riley Peralta</a
+      >
+    </div>
+  </div>
+  <div class="grid grid-cols-2 gap-4 pb-4 sm:grid-cols-5">
+    <h2 class="text-right font-sans text-neutral-500 sm:col-start-4">
+      contact information
+    </h2>
+    <div class="flex flex-col">
+      <a
+        href="https://www.linkedin.com/in/rileyperalta"
+        rel="noopener noreferrer nofollow"
+        target="_blank"
+        class="w-fit hover:underline">linkedin</a
+      >
+      <a href="mailto:hello@rileyperalta.com" class="w-fit hover:underline"
+        >email</a
+      >
+    </div>
+  </div>
+  <div class="grid grid-cols-2 gap-4 pb-4 sm:grid-cols-5">
+    <h2 class="text-right font-sans text-neutral-500 sm:col-start-4">
+      additional links
+    </h2>
+    <div class="flex flex-col">
+      <a
+        href={privacy}
+        aria-current={pathname === privacy ? "page" : null}
+        class={pathname === privacy ? "underline" : "w-fit hover:underline"}
+        >privacy policy</a
+      >
+      <a
+        href={copyright}
+        aria-current={pathname === copyright ? "page" : null}
+        class={pathname === copyright ? "underline" : "w-fit hover:underline"}
+        >copyright</a
+      >
+      <a
+        href={home}
+        aria-current={pathname === home ? "page" : null}
+        class={pathname === home ? "underline" : "w-fit hover:underline"}
+        >gallery</a
+      >
+      <a
+        href={about}
+        aria-current={pathname === about ? "page" : null}
+        class={pathname === about ? "underline" : "w-fit hover:underline"}
+        >about</a
+      >
+      <a
+        href="https://rileyperalta.com/work/"
+        rel="author me"
+        target="_blank"
+        class="w-fit hover:underline">work</a
+      >
+      <a
+        href="https://blog.rileyperalta.com/"
+        rel="author me"
+        target="_blank"
+        class="w-fit hover:underline">blog</a
+      >
+    </div>
+  </div>
+  <div class="grid grid-cols-2 gap-4 pt-12 pb-4 sm:grid-cols-5">
+    <p class="col-start-1 text-right font-sans text-neutral-500 sm:col-start-4">
+      &copy;{new Date().getFullYear()}
+    </p>
+    <a href="/copyright/" class="w-fit hover:underline">all rights reserved</a>
+  </div>
+</footer>

@@ -1,0 +1,115 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+interface Props {
+  image: ImageMetadata;
+  title: string;
+  description: string;
+}
+
+const { image, title, description } = Astro.props;
+---
+
+<dialog class="cursor-default bg-transparent">
+  <div class="fixed inset-0 bg-neutral-900/90">
+    <button
+      class="modal-close absolute top-4 right-4 z-20 cursor-pointer p-2 text-neutral-100 transition-colors focus-visible:outline-none"
+      aria-label="Close"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+      >
+        <path
+          fill="currentColor"
+          d="M6.4 19L5 17.6l5.6-5.6L5 6.4L6.4 5l5.6 5.6L17.6 5L19 6.4L13.4 12l5.6 5.6l-1.4 1.4l-5.6-5.6z"
+        ></path>
+      </svg>
+    </button>
+    <div class="modal-content relative h-screen w-screen">
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div
+          class="image-container relative flex h-full w-full flex-col items-center justify-center"
+        >
+          <Image
+            src={image}
+            alt={description}
+            class="h-auto max-h-full w-auto max-w-full object-contain p-16"
+            loading="eager"
+          />
+        </div>
+      </div>
+      <div
+        class="metadata-overlay absolute right-0 bottom-0 left-0 bg-gradient-to-t from-neutral-900/90 to-transparent p-4 opacity-0 transition-opacity duration-300"
+      >
+        <h2 class="font-serif text-2xl text-neutral-100">{title}</h2>
+        <p class="mt-2 text-neutral-200">{description}</p>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<script>
+  document.querySelectorAll("dialog").forEach((modal) => {
+    const closeButton = modal.querySelector(".modal-close");
+    const modalContent = modal.querySelector(".modal-content");
+    const imageContainer = modalContent?.querySelector(".image-container");
+    const metadataOverlay = modalContent?.querySelector(".metadata-overlay");
+    const image = imageContainer?.querySelector("img");
+
+    // function to handle modal closing
+    const handleClose = () => {
+      document.body.classList.remove("overflow-hidden");
+      (modal as HTMLDialogElement).close();
+    };
+
+    // close on close button click
+    closeButton?.addEventListener("click", (e) => {
+      e.stopPropagation();
+      handleClose();
+    });
+
+    // close on escape key
+    modal.addEventListener("cancel", () => {
+      handleClose();
+    });
+
+    // ensure class is removed when dialog closes
+    modal.addEventListener("close", () => {
+      document.body.classList.remove("overflow-hidden");
+    });
+    // toggle metadata overlay on mouse and touch events
+    const toggleMetadata = (event: any) => {
+      if (metadataOverlay) {
+        if (
+          event.type.includes("mouseenter") ||
+          event.type.includes("touchstart")
+        ) {
+          metadataOverlay.classList.remove("opacity-0");
+        } else if (
+          event.type.includes("mouseleave") ||
+          event.type.includes("touchend")
+        ) {
+          metadataOverlay.classList.add("opacity-0");
+        }
+      }
+    };
+
+    // add event listeners to modal images
+    image?.addEventListener("mouseenter", toggleMetadata);
+    image?.addEventListener("mouseleave", toggleMetadata);
+    image?.addEventListener("touchstart", toggleMetadata);
+    image?.addEventListener("touchend", toggleMetadata);
+  });
+</script>
+
+<style>
+  /* prevent scrolling when modal is open */
+  :global(body.overflow-hidden) {
+    overflow: hidden;
+    padding-right: var(--scrollbar-width);
+  }
+</style>

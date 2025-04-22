@@ -1,0 +1,39 @@
+---
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Riley's Gallery"
+  description="A collection of images in a gallery format"
+>
+  <h1 class="mb-6 font-sans text-6xl font-black uppercase sm:text-8xl">
+    About this project
+  </h1>
+  <Breadcrumbs />
+  <main class="flex min-h-[75dvh] flex-col gap-4 text-sm [&>*]:max-w-[75ch]">
+    <p>
+      Riley is a fullstack web developer and photography enthusiast who enjoys
+      walking around the Bay Area and capturing fleeting moments. This project
+      was initially created as a way to showcase web development & design
+      skills, but in the end, photography should be the primary focus. Riley is
+      always looking for new opportunities to learn and grow, he hopes that this
+      project will inspire others to do the same.
+    </p>
+    <p>
+      This website was built using Astro.js and the source code is <a
+        class="font-bold hover:underline"
+        href="https://github.com/RP2/mega-monorepo"
+        rel="noopener noreferrer nofollow"
+        target="_blank">open sourced and available on GitHub</a
+      >. All the images in this gallery were taken by Riley, some with a film
+      camera and others with a digital camera. Lately however, as the price of
+      film and life itself continues to rise, more photos are likely to be
+      digital.
+    </p>
+    <p>I hope you enjoy this gallery, thank you for your time.</p>
+    <p>— Riley Peralta</p>
+  </main>
+  <Footer />
+</Layout>

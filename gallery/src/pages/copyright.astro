@@ -1,0 +1,55 @@
+---
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Riley's Gallery"
+  description="A collection of images in a gallery format"
+>
+  <h1 class="mb-6 font-sans text-6xl font-black uppercase sm:text-8xl">
+    Notice of Copyright Policy
+  </h1>
+  <Breadcrumbs />
+  <main class="flex min-h-[75dvh] flex-col gap-4 text-sm [&>*]:max-w-[75ch]">
+    <!-- effective as of the first publication, not including the development phase or placeholder images used for testing purposes only (obviously). -->
+    <p>
+      All photos (images) on this website were made by <span class="italic"
+        >me</span
+      >, and therefor copyrighted. These photos may not be used or shared
+      without prior written consent. Failure to abide by this policy will hurt
+      my feelings.
+    </p>
+    <p>
+      However, the <a
+        href="https://github.com/RP2/mega-monorepo/tree/main/gallery"
+        target="_blank"
+        rel="noopener noreferrer nofollow"
+        class="font-bold hover:underline">website source code</a
+      > is licensed under <span class="italic">MIT</span> and may be freely used
+      (though credit is appreciated); you can find the source code for this gallery
+      in the
+      <a
+        href="https://github.com/RP2/mega-monorepo"
+        target="_blank"
+        rel="noopener noreferrer nofollow"
+        class="font-bold hover:underline">monorepo</a
+      >.
+    </p>
+    <p>
+      Please <a
+        href="https://rileyperalta.com/contact/"
+        target="_blank"
+        rel="author me"
+        class="font-bold hover:underline">contact me</a
+      > if you have any questions regarding copyright, licenses, or the use of my
+      work.
+    </p>
+    <p>
+      By accessing this website, you <span class="italic">acknowledge</span> to abide
+      by the terms and conditions set forth in this policy.
+    </p>
+  </main>
+  <Footer />
+</Layout>

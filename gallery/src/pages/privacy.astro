@@ -1,0 +1,58 @@
+---
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Riley's Gallery"
+  description="A collection of images in a gallery format"
+>
+  <h1 class="mb-6 font-sans text-6xl font-black uppercase sm:text-8xl">
+    Statement on Privacy
+  </h1>
+  <Breadcrumbs />
+  <main class="flex min-h-[75dvh] flex-col gap-4 text-sm [&>*]:max-w-[75ch]">
+    <p>
+      Your privacy is important to me; this website does not knowingly engage in
+      invasive practices such as tracking data, fingerprinting, or selling
+      personal information to third parties.
+    </p>
+    <p>
+      This site is hosted on
+      <a
+        class="font-bold hover:underline"
+        href="https://www.cloudflare.com/privacypolicy/"
+        target="_blank"
+        rel="noopener noreferrer nofollow">Cloudflare</a
+      >, ensuring fast performance and enhanced security for all users. It also
+      utilizes <a
+        class="font-bold hover:underline"
+        href="https://policies.google.com/privacy"
+        target="_blank"
+        rel="noopener noreferrer nofollow">Google Search Console</a
+      > for maintenance and SEO purposes which ensure a seamless web presence. Both
+      services have their own privacy policies and should be reviewed for additional
+      information and clarification.
+    </p>
+    <p>
+      While using <a
+        class="font-bold hover:underline"
+        href="https://www.cloudflare.com/privacypolicy/"
+        target="_blank"
+        rel="noopener noreferrer nofollow">Cloudflare</a
+      > and <a
+        class="font-bold hover:underline"
+        href="https://policies.google.com/privacy"
+        target="_blank"
+        rel="noopener noreferrer nofollow">Google Search Console</a
+      > to improve SEO and security, this may inadvertently share limited site traffic
+      data with them.
+    </p>
+    <p>
+      By using the website, you herby <span class="italic">consent</span> to the
+      Privacy Policy and agree to its terms.
+    </p>
+  </main>
+  <Footer />
+</Layout>

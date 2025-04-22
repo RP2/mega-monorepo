@@ -1,0 +1,107 @@
+---
+// get all unique tags from metadata.json
+import metadata from "../data/metadata.json";
+
+// collect unique tags from metadata
+const uniqueTags = new Set<string>();
+metadata.forEach((item) => {
+  item.tags.forEach((tag: string) => uniqueTags.add(tag));
+});
+
+// convert set to array and sort alphabetically
+const sortedTags = Array.from(uniqueTags).sort();
+---
+
+<div
+  class="my-4 flex flex-wrap gap-4 [&>*]:cursor-pointer [&>*]:lowercase [&>*]:hover:underline"
+>
+  <button
+    title="Show everything, no filters applied"
+    class="filter-btn cursor-pointer lowercase underline"
+    data-filter="all">Everything</button
+  >
+  {
+    sortedTags.map((tag) => (
+      <button
+        title={`Show all ${tag} items`}
+        class="filter-btn cursor-pointer lowercase"
+        data-filter={tag}
+      >
+        {tag}
+      </button>
+    ))
+  }
+</div>
+
+<script>
+  import { animate } from "motion";
+
+  // initialize cards and buttons on DOM load
+  document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll("card");
+    const buttons = document.querySelectorAll(".filter-btn");
+
+    const animateCards = async (cardsToShow: HTMLElement[]) => {
+      // first hide all cards
+      await Promise.all(
+        Array.from(cards).map((card) =>
+          animate(
+            card,
+            { opacity: [1, 0], y: [0, 35] },
+            {
+              opacity: { duration: 0.25 },
+              y: {
+                duration: 0.5,
+                type: "spring",
+                damping: 20,
+                stiffness: 500,
+              },
+            },
+          ).then(() => card.classList.add("hidden")),
+        ),
+      );
+
+      // show and animate filtered cards
+      if (cardsToShow.length) {
+        cardsToShow.forEach((card) => card.classList.remove("hidden"));
+        await Promise.all(
+          cardsToShow.map((card) =>
+            animate(
+              card,
+              { opacity: [0, 1], y: [35, 0] },
+              {
+                opacity: { duration: 0.25 },
+                y: {
+                  duration: 0.5,
+                  type: "spring",
+                  damping: 20,
+                  stiffness: 500,
+                },
+              },
+            ),
+          ),
+        );
+      }
+    };
+    // add event listeners to filter buttons
+    buttons.forEach((button) => {
+      button.addEventListener("click", async () => {
+        buttons.forEach((btn) => btn.classList.remove("underline"));
+        button.classList.add("underline");
+
+        const selectedTag = button.getAttribute("data-filter");
+
+        const cardsToShow = Array.from(cards).filter((card) => {
+          if (selectedTag === "all") {
+            return true;
+          }
+
+          const cardTags = card.getAttribute("data-tags")?.split(", ") || [];
+          return cardTags.includes(selectedTag ?? "");
+        });
+
+        await animateCards(cardsToShow as HTMLElement[]);
+      });
+    });
+  });
+</script>

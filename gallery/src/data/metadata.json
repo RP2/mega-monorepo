@@ -1,0 +1,386 @@
+[
+  {
+    "collection": "2025-04-22",
+    "filename": "4th-street-brunch.jpg",
+    "title": "4th Street Brunch",
+    "description": "Young women eating brunch on 4th street",
+    "tags": ["Color", "Film", "Berkeley"],
+    "date": "2025-04-22"
+  },
+  {
+    "collection": "2025-04-22",
+    "filename": "4th-street-puppy.jpg",
+    "title": "4th Street Puppy",
+    "description": "Puppy flopping for tummy pets",
+    "tags": ["Color", "Film", "Berkeley"],
+    "date": "2025-04-22"
+  },
+  {
+    "collection": "2025-04-22",
+    "filename": "behind-safeway.jpg",
+    "title": "Behind Safeway",
+    "description": "The area behind a Safeway store",
+    "tags": ["Color", "Film", "Berkeley"],
+    "date": "2025-04-22"
+  },
+  {
+    "collection": "2025-04-22",
+    "filename": "berkeley-flower.jpg",
+    "title": "Berkeley Flower",
+    "description": "Berkeley horticulture flower",
+    "tags": ["Color", "Film", "Berkeley"],
+    "date": "2025-04-22"
+  },
+  {
+    "collection": "2025-04-22",
+    "filename": "freeway-top-down.jpg",
+    "title": "Freeway Top Down",
+    "description": "A group enjoying the wind in their hair",
+    "tags": ["Color", "Film", "Berkeley"],
+    "date": "2025-04-22"
+  },
+  {
+    "collection": "2025-04-22",
+    "filename": "public-pool.jpg",
+    "title": "Public Pool",
+    "description": "View of a public pool in San Francisco",
+    "tags": ["Color", "Film", "San Francisco"],
+    "date": "2025-04-22"
+  },
+  {
+    "collection": "2025-04-22",
+    "filename": "scrap-art.jpg",
+    "title": "Scrap Art",
+    "description": "Weird art pice made from scraps",
+    "tags": ["Color", "Film", "San Francisco"],
+    "date": "2025-04-22"
+  },
+  {
+    "collection": "2025-04-22",
+    "filename": "sf-alone-in-the-park.jpg",
+    "title": "Alone In The Park",
+    "description": "Someone enjoying the park alone",
+    "tags": ["Color", "Film", "San Francisco"],
+    "date": "2025-04-22"
+  },
+  {
+    "collection": "2025-04-22",
+    "filename": "sf-business-people.jpg",
+    "title": "Business People",
+    "description": "Group of business people walking downtown",
+    "tags": ["Color", "Film", "San Francisco"],
+    "date": "2025-04-22"
+  },
+  {
+    "collection": "2025-04-22",
+    "filename": "sf-delivery.jpg",
+    "title": "Delivery Driver",
+    "description": "Someone waiting for a delivery order to come in",
+    "tags": ["Color", "Film", "San Francisco"],
+    "date": "2025-04-22"
+  },
+  {
+    "collection": "2025-04-22",
+    "filename": "sf-divisadero.jpg",
+    "title": "Divisadero",
+    "description": "Divisadero street in San Francisco",
+    "tags": ["Color", "Film", "San Francisco"],
+    "date": "2025-04-22"
+  },
+  {
+    "collection": "2025-04-22",
+    "filename": "sf-house.jpg",
+    "title": "House",
+    "description": "Interesting house and plants in San Francisco",
+    "tags": ["Color", "Film", "San Francisco"],
+    "date": "2025-04-22"
+  },
+  {
+    "collection": "2025-04-22",
+    "filename": "sf-ocean-rocks.jpg",
+    "title": "Ocean Rocks",
+    "description": "San Francisco's big ocean rocks near the cliff house",
+    "tags": ["Color", "Film", "San Francisco"],
+    "date": "2025-04-22"
+  },
+  {
+    "collection": "2025-04-22",
+    "filename": "sf-painted-park.jpg",
+    "title": "Painted Park",
+    "description": "People enjoying the park",
+    "tags": ["Color", "Film", "San Francisco"],
+    "date": "2025-04-22"
+  },
+  {
+    "collection": "2025-04-22",
+    "filename": "sf-plant-window.jpg",
+    "title": "Plant Window",
+    "description": "The back plant room of a store",
+    "tags": ["Color", "Film", "San Francisco"],
+    "date": "2025-04-22"
+  },
+  {
+    "collection": "2025-04-22",
+    "filename": "sf-rubber-ducks.jpg",
+    "title": "Rubber Ducks",
+    "description": "Street art installation with rubber duckies",
+    "tags": ["Color", "Film", "San Francisco"],
+    "date": "2025-04-22"
+  },
+  {
+    "collection": "2025-04-22",
+    "filename": "sf-sand-castle-builders.jpg",
+    "title": "Sand Castle Builders",
+    "description": "Sand castle competition builders",
+    "tags": ["Color", "Film", "San Francisco"],
+    "date": "2025-04-22"
+  },
+  {
+    "collection": "2025-04-22",
+    "filename": "sf-sand-castles-&-heli.jpg",
+    "title": "Sand Castles & Helicopter",
+    "description": "Coastguard helicopter watching over the sand castle competition",
+    "tags": ["Color", "Film", "San Francisco"],
+    "date": "2025-04-22"
+  },
+  {
+    "collection": "2025-04-22",
+    "filename": "sf-sea-wall.jpg",
+    "title": "Sea Wall",
+    "description": "A couple sitting on the sea wall",
+    "tags": ["Color", "Film", "San Francisco"],
+    "date": "2025-04-22"
+  },
+  {
+    "collection": "2025-04-22",
+    "filename": "sf-surfers.jpg",
+    "title": "Surfers",
+    "description": "Group of surfers talking",
+    "tags": ["Color", "Film", "San Francisco"],
+    "date": "2025-04-22"
+  },
+  {
+    "collection": "2025-04-22",
+    "filename": "sf-trolly-car.jpg",
+    "title": "Trolly Car",
+    "description": "Tourists getting on the trolly car",
+    "tags": ["Color", "Film", "San Francisco"],
+    "date": "2025-04-22"
+  },
+  {
+    "collection": "2025-04-22",
+    "filename": "sf-window-brunch.jpg",
+    "title": "Window Brunch",
+    "description": "A couple eating brunch",
+    "tags": ["Color", "Film", "San Francisco"],
+    "date": "2025-04-22"
+  },
+  {
+    "collection": "2025-04-22",
+    "filename": "waiting-4th-street.jpg",
+    "title": "Waiting 4th Street",
+    "description": "A guy waiting for someone to finish shopping",
+    "tags": ["Color", "Film", "Berkeley"],
+    "date": "2025-04-22"
+  },
+  {
+    "collection": "2025-04-05",
+    "filename": "Oakland_Protest-01.jpg",
+    "title": "Oakland Protest 04/05/2025",
+    "description": "Sleepy kid in a stroller",
+    "tags": ["B&W", "Digital", "Oakland"],
+    "date": "2025-04-05"
+  },
+  {
+    "collection": "2025-04-05",
+    "filename": "Oakland_Protest-04.jpg",
+    "title": "Oakland Protest 04/05/2025",
+    "description": "Old guy holding a Palestinian flag",
+    "tags": ["B&W", "Digital", "Oakland"],
+    "date": "2025-04-05"
+  },
+  {
+    "collection": "2025-04-05",
+    "filename": "Oakland_Protest-08.jpg",
+    "title": "Oakland Protest 04/05/2025",
+    "description": "Old dude with a cool hat checking his phone",
+    "tags": ["B&W", "Digital", "Oakland"],
+    "date": "2025-04-05"
+  },
+  {
+    "collection": "2025-04-05",
+    "filename": "Oakland_Protest-09.jpg",
+    "title": "Oakland Protest 04/05/2025",
+    "description": "Two old ladies talking to each other",
+    "tags": ["B&W", "Digital", "Oakland"],
+    "date": "2025-04-05"
+  },
+  {
+    "collection": "2025-04-05",
+    "filename": "Oakland_Protest-13.jpg",
+    "title": "Oakland Protest 04/05/2025",
+    "description": "People standing from a good vantage point",
+    "tags": ["B&W", "Digital", "Oakland"],
+    "date": "2025-04-05"
+  },
+  {
+    "collection": "2025-04-05",
+    "filename": "Oakland_Protest-16.jpg",
+    "title": "Oakland Protest 04/05/2025",
+    "description": "Large group of people sitting and listening to a speaker",
+    "tags": ["B&W", "Digital", "Oakland"],
+    "date": "2025-04-05"
+  },
+  {
+    "collection": "2025-04-05",
+    "filename": "Oakland_Protest-20.jpg",
+    "title": "Oakland Protest 04/05/2025",
+    "description": "More people listening to a speaker",
+    "tags": ["B&W", "Digital", "Oakland"],
+    "date": "2025-04-05"
+  },
+  {
+    "collection": "2025-04-05",
+    "filename": "Oakland_Protest-21.jpg",
+    "title": "Oakland Protest 04/05/2025",
+    "description": "People walking towards the park",
+    "tags": ["B&W", "Digital", "Oakland"],
+    "date": "2025-04-05"
+  },
+  {
+    "collection": "2025-04-05",
+    "filename": "Oakland_Protest-22.jpg",
+    "title": "Oakland Protest 04/05/2025",
+    "description": "More people coming to join the protest",
+    "tags": ["B&W", "Digital", "Oakland"],
+    "date": "2025-04-05"
+  },
+  {
+    "collection": "2025-04-05",
+    "filename": "Oakland_Protest-25.jpg",
+    "title": "Oakland Protest 04/05/2025",
+    "description": "Listening to speaker from a high vantage point",
+    "tags": ["B&W", "Digital", "Oakland"],
+    "date": "2025-04-05"
+  },
+  {
+    "collection": "2025-04-05",
+    "filename": "Oakland_Protest-26.jpg",
+    "title": "Oakland Protest 04/05/2025",
+    "description": "Some signs on the ground",
+    "tags": ["B&W", "Digital", "Oakland"],
+    "date": "2025-04-05"
+  },
+  {
+    "collection": "2025-04-05",
+    "filename": "Oakland_Protest-31.jpg",
+    "title": "Oakland Protest 04/05/2025",
+    "description": "POV from the middle of the crowd",
+    "tags": ["B&W", "Digital", "Oakland"],
+    "date": "2025-04-05"
+  },
+  {
+    "collection": "2025-04-05",
+    "filename": "Oakland_Protest-35.jpg",
+    "title": "Oakland Protest 04/05/2025",
+    "description": "People talking to each other",
+    "tags": ["B&W", "Digital", "Oakland"],
+    "date": "2025-04-05"
+  },
+  {
+    "collection": "2025-04-05",
+    "filename": "Oakland_Protest-38.jpg",
+    "title": "Oakland Protest 04/05/2025",
+    "description": "Taking a photo from a high vantage point",
+    "tags": ["B&W", "Digital", "Oakland"],
+    "date": "2025-04-05"
+  },
+  {
+    "collection": "2025-04-05",
+    "filename": "Oakland_Protest-39.jpg",
+    "title": "Oakland Protest 04/05/2025",
+    "description": "The entire public space filled with people",
+    "tags": ["B&W", "Digital", "Oakland"],
+    "date": "2025-04-05"
+  },
+  {
+    "collection": "2025-03-22",
+    "filename": "black-dog.jpg",
+    "title": "Black Dog",
+    "description": "Cool dog in a coffee shop",
+    "tags": ["B&W", "Digital", "San Francisco"],
+    "date": "2025-03-22"
+  },
+  {
+    "collection": "2025-03-22",
+    "filename": "check-protector.jpg",
+    "title": "Check Protector",
+    "description": "Old check protector machine",
+    "tags": ["B&W", "Digital", "San Francisco"],
+    "date": "2025-03-22"
+  },
+  {
+    "collection": "2025-03-22",
+    "filename": "coin-laundry.jpg",
+    "title": "Coin Laundry",
+    "description": "Northside coin laundry",
+    "tags": ["B&W", "Digital", "Oakland"],
+    "date": "2025-03-22"
+  },
+  {
+    "collection": "2025-03-22",
+    "filename": "exit-stairs.jpg",
+    "title": "Exit Stairs",
+    "description": "Creepy exit stairs",
+    "tags": ["B&W", "Digital", "San Francisco"],
+    "date": "2025-03-22"
+  },
+  {
+    "collection": "2025-03-22",
+    "filename": "lil-guy.jpg",
+    "title": "Lil Guy",
+    "description": "Cute little dog",
+    "tags": ["B&W", "Digital", "San Francisco"],
+    "date": "2025-03-22"
+  },
+  {
+    "collection": "2025-03-22",
+    "filename": "old-industrial-building.jpg",
+    "title": "Old Industrial Building",
+    "description": "Remnants of old San Francisco",
+    "tags": ["B&W", "Digital", "San Francisco"],
+    "date": "2025-03-22"
+  },
+  {
+    "collection": "2025-03-22",
+    "filename": "sac-biker.jpg",
+    "title": "Sac Biker",
+    "description": "Pro-biker in Berkeley",
+    "tags": ["B&W", "Digital", "Berkeley"],
+    "date": "2025-03-22"
+  },
+  {
+    "collection": "2025-03-22",
+    "filename": "san-francisco-building.jpg",
+    "title": "San Francisco Building",
+    "description": "Cool old SF building",
+    "tags": ["B&W", "Digital", "San Francisco"],
+    "date": "2025-03-22"
+  },
+  {
+    "collection": "2025-03-22",
+    "filename": "signature-hotel.jpg",
+    "title": "Signature Hotel",
+    "description": "Interesting hotel signage",
+    "tags": ["B&W", "Digital", "San Francisco"],
+    "date": "2025-03-22"
+  },
+  {
+    "collection": "2025-03-22",
+    "filename": "window-american-flag.jpg",
+    "title": "Window American Flag",
+    "description": "American flag outside a window",
+    "tags": ["B&W", "Digital", "San Francisco"],
+    "date": "2025-03-22"
+  }
+]
