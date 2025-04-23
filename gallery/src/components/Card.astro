@@ -29,7 +29,7 @@ const bgStyle = `background-image: url(${tinyPlaceholder.src}); background-size:
 <card
   data-tags={item.tags.join(", ")}
   id={item.title}
-  class="group aspect-retro invisible relative max-h-[500px] cursor-pointer overflow-hidden rounded-sm"
+  class="group sm:aspect-retro invisible relative aspect-auto max-h-full cursor-pointer overflow-hidden rounded-sm sm:max-h-[500px]"
 >
   <div
     class="absolute -inset-3 -z-10 scale-105 blur-md"
